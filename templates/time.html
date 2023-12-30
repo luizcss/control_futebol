@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<body>
+    <form id="timeForm" method="POST" action="{{ url_for('listar') }}">
+
+        <label>Nome: </label><input id="nomeTime"></input>
+        <label>Data Fundação: </label><input id="nomeDataFundacao"></input>
+        <label>Estadio : </label>
+        <select id=cbEstadio onchange="alert(this.value);">
+            <option value="">Selecione um Estádio</option>
+            <option value="morumbi">Morumbi - São Paulo - SP</option>
+            <option value="maracana">Maracanã - Rio de Janeiro - RJ</option>
+        </select>
+
+        <input type="submit" value="listar roteiros" id="btnListar" name="btnListar">
+
+    </form>
+</body>
+
+</html>

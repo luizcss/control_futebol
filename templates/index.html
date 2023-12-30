@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Acompanhamentos de jogos</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: red;
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Jogos</legend>
+        <div class="animation-name: moveRight;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data do jogo</th>
+                        <th colspan="5">Times</th>
+                        <th>Campeonato</th>
+                        <th >Estadio</th>
+                        <th >Local</th>
+                        <th>Fase/Rodada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for jogo in lstJogos %}
+                    <tr>
+                        <td>{{jogo.dataHoraJogo}}</td>
+                        <td>{{jogo.timeCasa}}</td>
+                        <td>{{jogo.golsCasa}}</td>
+                        <td>X</td>
+                        <td>{{jogo.golsVisitante}}</td>
+                        <td>{{jogo.timeVisitante}}</td>
+                        <td>{{jogo.campeonato}}</td>
+                        <td>{{jogo.localJogo}}</td>
+                        <td>{{jogo.localJogo}}</td>
+                        {% if jogo.temRodada == True%}
+                        <td>Rodada : {{ jogo.fase}}</td>
+                        {% endif %}
+                        {% if jogo.temRodada == False%}
+                        <td>{{ jogo.fase}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+        </div>
+    </fieldset>
+</body>
+
+</html>
