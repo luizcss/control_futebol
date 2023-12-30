@@ -7,7 +7,7 @@ import os
 def criarTabelas(nomeScript):
     conn = abrirConexao()
     cursor = conn.cursor()
-    caminho_relativo = '..\\scripts\\'+nomeScript
+    caminho_relativo = '..\\script\\'+nomeScript
     caminho_absoluto = os.path.join(os.path.dirname(__file__), caminho_relativo)
     try:
         with open(caminho_absoluto, 'r') as arquivo:
@@ -34,7 +34,7 @@ def fecharConexao(conn):
 
 
 def start():
-    for filename in os.listdir("./scripts"):
+    for filename in os.listdir("./script"):
        print(filename)
        criarTabelas(filename)
 
